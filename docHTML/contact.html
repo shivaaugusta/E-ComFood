@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/style3.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="container">
+        <div class="screen">
+          <div class="screen-header">
+            <div class="screen-header-left">
+              <div class="screen-header-button close"></div>
+              <div class="screen-header-button maximize"></div>
+              <div class="screen-header-button minimize"></div>
+            </div>
+            <div class="screen-header-right">
+              <div class="screen-header-ellipsis"></div>
+              <div class="screen-header-ellipsis"></div>
+              <div class="screen-header-ellipsis"></div>
+            </div>
+          </div>
+          <div class="screen-body">
+            <div class="screen-body-item left">
+              <div class="app-title">
+                <span>HUBUNGI KAMI</span>
+                <span>UNTUK ORDER</span>
+                <span>MELALUI WHATSAPP</span>
+              </div>
+              <div class="app-contact">
+                <a href="https://wa.me/62895363375272" style="color: antiquewhite">WhatsApp : +628 953 633 75272</a>
+              </div>
+            </div>
+            <div class="screen-body-item">
+              <div class="app-form">
+                <div class="app-form-group">
+                  <input type="text" name="nama" id="nama" class="app-form-control" placeholder="NAME" />
+                </div>
+                <div class="app-form-group">
+                  <input type="email" name="email" id="email" class="app-form-control" placeholder="EMAIL" />
+                </div>
+                <div class="app-form-group">
+                  <input type="number" name="alamat" id="alamat" class="app-form-control" placeholder="CONTACT NO" />
+                </div>
+                <div class="app-form-group">
+                  <input type="text" name="message" id="message" class="app-form-control message" placeholder="MESSAGE" />
+                </div>
+                <div class="app-form-group buttons">
+                  <a href="../index.html"><button class="app-form-button">CANCEL</button></a>
+                  <button class="app-form-button" onclick="validasi()">SEND</button>
+                </div>
+              </div>
+              <!-- <div class="app-contact">CONTACT INFO : +62895363375272</div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function validasi() {
+        var nama = document.getElementById('nama').value;
+        var email = document.getElementById('email').value;
+        var alamat = document.getElementById('alamat').value;
+        var message = document.getElementById('message').value;
+        if (nama != '' && email != '' && alamat != '' && message != '') {
+          alert('Data Sudah Tersimpan!');
+        } else {
+          alert('Masukkan Data yang Lengkap!');
+        }
+      }
+    </script>
+
+    <!-- <div class="background">
+        <div class="container">
+            <div class="screen">
+                <div class="screen-header">
+                    <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                        </div>
+                    </div>
+                    <div class="screen-header-right">
+                        <div class="screen-header-ellipsis close"></div>
+                        <div class="screen-header-ellipsis maximize"></div>
+                        <div class="screen-header-ellipsis minimize"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="screen-body">
+                <div class="screen-body-item left">
+                    <div class="app-title">
+                        <span>CONTACT</span>
+                        <span>US</span>
+                    </div>
+                    <div class="app-contact">CONTACT INFO : +62 895 363 375272</div>
+                </div>
+            </div>
+            <div class="screen-body-item">
+                <div class="app-form">
+                    <div class="app-form-group">
+                        <input type="text" class="app-form-control" placeholder="NAME">
+                    </div>
+                    <div class="app-form-group">
+                        <input type="text" class="app-form-control" placeholder="EMAIL">
+                    </div>
+                    <div class="app-form-group">
+                        <input type="text" class="app-form-control" placeholder="CONTACT NO">
+                    </div>
+                    <div class="app-form-group message">
+                        <input type="text" class="app-form-control" placeholder="MESSAGE">
+                    </div>
+                    <div class="app-form-group buttons">
+                        <button class="app-form-button">CANCEL</button>
+                        <button class="app-form-button">SEND</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+  </body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/e8fa2e31b4.js" crossorigin="anonymous"></script>
+    <style>
+      :root {
+        --green: rgb(252, 188, 12);
+        --black: rgb(45, 29, 7);
+        --light-color: rgb(124, 97, 97);
+        --box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+        font-size: 18px;
+      }
+      body {
+        margin: 4vh;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .sidebar {
+        width: 25%;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        padding: 15px;
+        height: 92vh;
+        box-shadow: var(--box-shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .fa-circle {
+        color: var(--green);
+      }
+      .searchBar {
+        width: 100%;
+        background-color: #eee;
+        border-radius: 3px;
+        padding: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      input {
+        border: none;
+        outline: none;
+        background: none;
+      }
+      .glass:hover {
+        color: var(--green);
+        cursor: pointer;
+      }
+      .social-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .fa-brands {
+        font-size: 25px;
+        margin: 0 10px;
+        color: var(--green);
+        cursor: pointer;
+      }
+      .fa-brands:hover {
+        color: var(--box-shadow);
+      }
+      .data {
+        width: 73%;
+        border-radius: 3px;
+        height: 92vh;
+        overflow-y: auto;
+      }
+      .top {
+        height: 60px;
+        border-radius: 3px;
+        background-color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+      }
+      .header {
+        height: 200px;
+        border-radius: 3px;
+        background-color: #333;
+        margin: 3vh 0px;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .header p {
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+      }
+      #root {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+      }
+      .box {
+        margin: 1px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid var(--green);
+        border-radius: 5px;
+        padding: 15px;
+      }
+      .img-box {
+        width: 100%;
+        height: 176px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .images {
+        max-height: 90%;
+        max-width: 90%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .bottom {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 110px;
+      }
+      h2 {
+        font-size: 20px;
+        color: var(--black);
+      }
+      button {
+        width: 100%;
+        position: relative;
+        border: none;
+        border-radius: 5px;
+        background-color: var(--green);
+        padding: 7px 25px;
+        cursor: pointer;
+        color: white;
+      }
+      button:hover {
+        background-color: var(--light-color);
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidehead">
+          <div class="dots">
+            <i class="fa-solid fa-circle"></i>
+            <i class="fa-solid fa-circle" style="color: #333"></i>
+            <i class="fa-solid fa-circle"></i>
+          </div>
+          <hr style="margin: 15px 0; border: 1px solid #eee" />
+        </div>
+        <div class="sidebody" style="height: 69vh">
+          <div class="searchBar">
+            <input placeholder="Search..." id="searchBar" name="searchBar" type="text" />
+            <i class="fa-solid fa-magnifying-glass glass" id="btn"></i>
+          </div>
+        </div>
+        <div class="sidefoot">
+          <hr style="margin: 15px 0; border: 1px solid #eee" />
+          <div class="social-icons">
+            <i class="fa-solid fa-cart-circle-plus"></i>
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="data">
+        <div class="body">
+          <div id="root"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const product = [
+        {
+          id: 0,
+          image: '../images/biskuitcoklat2.jpg',
+          title: 'Biskuit Coklat',
+          price: 45000,
+        },
+        {
+          id: 1,
+          image: '../images/rotiultah2.jpg',
+          title: 'Black Forest',
+          price: 200000,
+        },
+        {
+          id: 2,
+          image: '../images/rotilapis2.jpg',
+          title: 'Lapis Surabaya',
+          price: 250000,
+        },
+        {
+          id: 3,
+          image: '../images/kolak2.jpg',
+          title: 'Kolak',
+          price: 10000,
+        },
+        {
+          id: 4,
+          image: '../images/gudegbesek2.jpg',
+          title: 'Nasi Kuning',
+          price: 35000,
+        },
+        {
+          id: 5,
+          image: '../images/gudegKomplit2.jpg',
+          title: 'Gudeg Komplit',
+          price: 55000,
+        },
+        {
+          id: 6,
+          image: '../images/nasiBali2.jpg',
+          title: 'Nasi Bali',
+          price: 25000,
+        },
+        {
+          id: 7,
+          image: '../images/nasiLanggi2.jpg',
+          title: 'Nasi Langgi',
+          price: 25000,
+        },
+        {
+          id: 8,
+          image: '../images/roticoklat2.jpg',
+          title: 'Triple Cokelat',
+          price: 350000,
+        },
+      ];
+
+      const categories = [
+        ...new Set(
+          product.map((item) => {
+            return item;
+          })
+        ),
+      ];
+
+      document.getElementById('searchBar').addEventListener('keyup', (e) => {
+        const searchData = e.target.value.toLowerCase();
+        const filteredData = categories.filter((item) => {
+          return item.title.toLowerCase().includes(searchData);
+        });
+        displayItem(filteredData);
+      });
+
+      const displayItem = (items) => {
+        document.getElementById('root').innerHTML = items
+          .map((item) => {
+            var { image, title, price } = item;
+            return `<div class='box'>
+                        <div class='img-box'>
+                            <img class='images' src=${image}></img>
+                        </div> 
+                        <div class='bottom'>
+                            <p>${title}</p>
+                            <h2>Rp ${price}.00</h2>
+                            <a href="index1.html"><button>Tersedia</button></a>
+                        </div>
+                    </div>`;
+          })
+          .join('');
+      };
+      displayItem(categories);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register | Login Account</title>
+    <link rel="stylesheet" href="../css/style2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login">
+        <form action="">
+          <h1>Login</h1>
+          <hr />
+          <p>ShiSaDin Resto</p>
+          <label for="">Email</label>
+          <input type="text" placeholder="example@gmail.com" name="email" id="email" />
+          <label for="">Password</label>
+          <input type="password" placeholder="Password" name="password" id="password" />
+          <button onclick="validasi()">Login</button>
+          <p>
+            <a href="#">Forgot Password?</a>
+          </p>
+        </form>
+      </div>
+      <div class="right">
+        <img src="../images/food.png" alt="" />
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function validasi() {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        if (email != '' && password != '') {
+          alert('Anda Berhasil Login!');
+        } else {
+          alert('Masukkan Email / Password yang Lengkap!');
+        }
+      }
+    </script>
+  </body>
+</html>
